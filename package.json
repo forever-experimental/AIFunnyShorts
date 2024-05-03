@@ -1,6 +1,7 @@
 {
   "type": "module",
   "scripts": {
+    "build": "npx esbuild generate_story.js --bundle --outfile=generate_story.bundle.js --format=cjs"
   },
   "dependencies": {
     "amnesic-openai": "1.0.*"
