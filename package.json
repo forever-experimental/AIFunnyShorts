@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "scripts": {
+  },
+  "dependencies": {
+    "amnesic-openai": "1.0.*"
+  }
+}
