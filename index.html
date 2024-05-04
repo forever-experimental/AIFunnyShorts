@@ -25,32 +25,37 @@
 </head>
 <body>
     <div class="border headed flex-col">
-        <label>Initial Prompt</label>
+        <label>Text Generation</label>
 
         <div>
-            <label for="apikey">API key:</label>
-            <input type="text" id="apikey" class="border">
+            <label for="input-textgen-apikey">ChatGPT API key:</label>
+            <input type="text" id="input-textgen-apikey" class="border">
         </div>
         
     	<div class="border" style="flex: 1;">
-            <textarea id="story">
+            <textarea id="input-textgen-text">
 In 100 words, write me an exciting story about...
                 
 Do not have characters laugh or acknowledge the humor of the scene. Include emotional dialogue. Make the punchline make no sense. Use generation alpha slang such as, but not limited to, "chuds," "gooners," "rizz," "alpha," and "sigma."
             </textarea>
         </div>
 
-        <input type="submit" id="gen-script" value="Generate Script">
+        <input type="submit" id="button-textgen-generate" value="Generate Script">
     </div>
 
     <div class="border headed flex-col">
         <label>Edit Script</label>
+
+        <div>
+            <label for="input-audiogen-apikey">ElevenLabs API key:</label>
+            <input type="text" id="input-audiogen-apikey" class="border">
+        </div>
         
         <div class="border" style="flex: 1;">
-            <textarea id="script"></textarea>
+            <textarea id="input-audiogen-text"></textarea>
         </div>
 
-        <input type="submit" id="gen-audio" value="Generate Audio">
+        <input type="submit" id="button-audiogen-generate" value="Generate Audio">
     </div>
 
     <div class="border headed flex-col">
@@ -64,7 +69,7 @@ Do not have characters laugh or acknowledge the humor of the scene. Include emot
         
         <div style="flex: 1;"></div>
 
-        <input type="submit" id="gen-video" value="Generate Video">
+        <input type="submit" id="button-videogen-generate" value="Generate Video">
     </div>
 
     <div class="border headed flex-col" style="grid-column: 2; grid-row: 1 / span 3;">
