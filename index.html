@@ -1,81 +1,126 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>AI Funny Shorts Generator</title>
-    <style>
-        body { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 2fr 2fr 1fr; align-items: center; gap: 2em; justify-content: center; height: 100vh; font-family: sans-serif; font-size: 14px; padding: 5em 0; margin: auto; width: 100%; max-width: 1000px; box-sizing: border-box; }
-        body > div { height: 100%; width: 100%; box-sizing: border-box; }
+    <head>
+        <meta charset="UTF-8">
+        <title>AI Funny Shorts Generator</title>
+        <style>
+            body {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 2fr 2fr 1fr;
+                align-items: center;
+                gap: 2em;
+                justify-content: center;
+                height: 100vh;
+                font-family: sans-serif;
+                font-size: 14px;
+                padding: 5em 0;
+                margin: auto;
+                width: 100%;
+                max-width: 1000px;
+                box-sizing: border-box;
+            }
 
-        label { color: #778; }
+            body > div {
+                height: 100%;
+                width: 100%;
+                box-sizing: border-box;
+            }
 
-        .flex-col { display: flex; flex-direction: column; gap: 1em; }
+            label {
+                color: #778;
+            }
 
-        .border { border: 1px solid #bbb; padding: 1em; border-radius: 6px; }
+            .flex-col {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+            }
 
-        .headed { position: relative; }
-        .headed > label { position: absolute; top: -0.5em; left: 1em; background: white; padding: 0 4px; }
+            .border {
+                border: 1px solid #bbb;
+                padding: 1em;
+                border-radius: 6px;
+            }
 
-        textarea { width: 100%; height: 100%; resize: none; border: 0; font-family: inherit; font-size: inherit; }
-        
-        input[type="submit"] { background: #8df; border: 0; border-radius: 4px; padding: 0.5em 1em; font-family: inherit; font-size: inherit; }
-        input[type="submit"]:hover { background: #6bd; cursor: pointer; }
-    </style>
-    <script src="src/util.js"></script>
-</head>
-<body>
-    <div class="border headed flex-col">
-        <label>Text Generation</label>
+            .headed {
+                position: relative;
+            }
 
-        <div>
-            <label for="input-openai">ChatGPT API key:</label>
-            <input type="text" id="input-openai" class="border">
-        </div>
-        
-    	<div class="border" style="flex: 1;">
+            .headed > label {
+                position: absolute;
+                top: -0.5em;
+                left: 1em;
+                background: white;
+                padding: 0 4px;
+            }
+
+            textarea {
+                width: 100%;
+                height: 100%;
+                resize: none;
+                border: 0;
+                font-family: inherit;
+                font-size: inherit;
+            }
+
+            input[type="submit"] {
+                background: #8df;
+                border: 0;
+                border-radius: 4px;
+                padding: 0.5em 1em;
+                font-family: inherit;
+                font-size: inherit;
+            }
+
+            input[type="submit"]:hover {
+                background: #6bd;
+                cursor: pointer;
+            }
+        </style>
+        <script src="src/util.js"></script>
+    </head>
+    <body>
+        <div class="border headed flex-col">
+            <label>Text Generation</label>
+            <div>
+                <label for="input-openai">ChatGPT API key:</label>
+                <input type="text" id="input-openai" class="border">
+            </div>
+            <div class="border" style="flex: 1;">
             <textarea id="textarea-story">
 In 100 words, write me an exciting story about...
                 
 Do not have characters laugh or acknowledge the humor of the scene. Include emotional dialogue. Make the punchline make no sense. Use generation alpha slang such as, but not limited to, "chuds," "gooners," "rizz," "alpha," and "sigma."
             </textarea>
+            </div>
+            <input type="submit" id="button-story" value="Generate Script">
         </div>
-
-        <input type="submit" id="button-story" value="Generate Script">
-    </div>
-
-    <div class="border headed flex-col">
-        <label>Edit Script</label>
-
-        <div>
-            <label for="input-elvnlabs">ElevenLabs API key:</label>
-            <input type="text" id="input-elvnlabs" class="border">
+        <div class="border headed flex-col">
+            <label>Edit Script</label>
+            <div>
+                <label for="input-elvnlabs">ElevenLabs API key:</label>
+                <input type="text" id="input-elvnlabs" class="border">
+            </div>
+            <div class="border" style="flex: 1;">
+                <textarea id="textarea-tts"></textarea>
+            </div>
+            <input type="submit" id="button-speech" value="Generate Audio">
         </div>
-        
-        <div class="border" style="flex: 1;">
-            <textarea id="textarea-tts"></textarea>
+        <div class="border headed flex-col">
+            <label>Approve Audio</label>
+            <audio id="audio" controls>
+                <!--             <source src="horse.ogg" type="audio/ogg">
+                            <source src="horse.mp3" type="audio/mpeg"> -->
+                Your browser does not support the audio element.
+            </audio>
+            <div style="flex: 1;"></div>
+            <input type="submit" id="button-video" value="Generate Video">
         </div>
-
-        <input type="submit" id="button-speech" value="Generate Audio">
-    </div>
-
-    <div class="border headed flex-col">
-        <label>Approve Audio</label>
-
-        <audio id="audio" controls>
-<!--             <source src="horse.ogg" type="audio/ogg">
-            <source src="horse.mp3" type="audio/mpeg"> -->
-            Your browser does not support the audio element.
-        </audio>
-        
-        <div style="flex: 1;"></div>
-
-        <input type="submit" id="button-video" value="Generate Video">
-    </div>
-
-    <div class="border headed flex-col" style="grid-column: 2; grid-row: 1 / span 3;">
-        <label>Final Video</label>
-    </div>
-    <script src="src/generate_story.js"></script>
-    <script src="src/generate_audio.js"></script>
-</body>
+        <div class="border headed flex-col" style="grid-column: 2; grid-row: 1 / span 3;">
+            <label>Final Video</label>
+        </div>
+        <script src="src/generate_story.js"></script>
+        <script src="src/generate_audio.js"></script>
+    </body>
 </html>
