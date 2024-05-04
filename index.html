@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>AI Funny Shorts Generator</title>
     <style>
-        body { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; align-items: center; gap: 2em; justify-content: center; height: 100vh; font-family: sans-serif; font-size: 14px; padding: 5em 0; margin: auto; width: 100%; max-width: 1000px; box-sizing: border-box; }
+        body { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 2fr 2fr 1fr; align-items: center; gap: 2em; justify-content: center; height: 100vh; font-family: sans-serif; font-size: 14px; padding: 5em 0; margin: auto; width: 100%; max-width: 1000px; box-sizing: border-box; }
         body > div { height: 100%; width: 100%; box-sizing: border-box; }
 
         label { color: #778; }
@@ -16,7 +16,7 @@
         .headed { position: relative; }
         .headed > label { position: absolute; top: -0.5em; left: 1em; background: white; padding: 0 4px; }
 
-        textarea { width: 100%; resize: none; border: 0; font-family: inherit; font-size: inherit; }
+        textarea { width: 100%; height: 100%; resize: none; border: 0; font-family: inherit; font-size: inherit; }
         
         input[type="submit"] { background: #8df; border: 0; border-radius: 4px; padding: 0.5em 1em; font-family: inherit; font-size: inherit; }
         input[type="submit"]:hover { background: #6bd; cursor: pointer; }
@@ -26,38 +26,40 @@
 
 
     <div class="border headed flex-col">
-        <label>Prompt → Script</label>
+        <label>Initial Prompt</label>
 
         <div>
             <label for="apikey">API key:</label>
             <input type="text" id="apikey" class="border">
         </div>
         
-    	<div class="border headed">
+    	<div class="border headed" style="flex: 1;">
     		<label for="story">Write me an exciting story about...</label>
-            <textarea id="story" rows="8">Write me an exciting story about [prompt]. Keep it very short. Do not have characters laugh or acknowledge the humor of the scene. Include emotional dialogue. Make the punchline make no sense. Use terminology such as, but not limited to, "chuds," "gooners," "rizz," "alpha," "nah I'd win," and "what the sigma."</textarea>
+            <textarea id="story">Write me an exciting story about [prompt]. Keep it very short. Do not have characters laugh or acknowledge the humor of the scene. Include emotional dialogue. Make the punchline make no sense. Use terminology such as, but not limited to, "chuds," "gooners," "rizz," "alpha," "nah I'd win," and "what the sigma."</textarea>
         </div>
-
-        <div style="flex: 1;"></div>
 
         <input type="submit" id="gen-script" value="Generate Script">
     </div>
 
     <div class="border headed flex-col">
-        <label>Script → Audio</label>
+        <label>Edit Script</label>
         
-        <div class="border headed">
+        <div class="border headed" style="flex: 1;">
     		<label for="script">Script</label>
-            <textarea id="script" rows="8"></textarea>
+            <textarea id="script"></textarea>
         </div>
-
-        <div style="flex: 1;"></div>
 
         <input type="submit" id="gen-audio" value="Generate Audio">
     </div>
 
-    <div class="border headed flex-col" style="grid-column: 2; grid-row: 1 / span 2;">
-        <label>Video</label>
+    <div class="border headed flex-col">
+        <label>Approve Audio</label>
+
+        <input type="submit" id="gen-audio" value="Generate Video">
+    </div>
+
+    <div class="border headed flex-col" style="grid-column: 2; grid-row: 1 / span 3;">
+        <label>Final Video</label>
     </div>
     <script src="src/generate_story.bundle.js"></script>
 </body>
