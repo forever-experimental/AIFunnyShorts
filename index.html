@@ -15,26 +15,24 @@
 <body>
 
 
-    <form class="border" style="width: 500px;">
+    <div class="border" style="width: 500px;">
         <label for="apikey">API key:</label>
-        <input type="text" id="apikey" name="apikey">
-    
+        <input type="text" id="apikey" name="apikey" class="border">
+        
     	<div class="border headed">
     		<label for="story">Write me an exciting story about...</label>
-            <textarea id="story" name="story" rows="8" style="width: 100%; height: 100%; resize: none; border: 0; font-family: inherit; font-size: inherit;"></textarea>
+            <textarea id="story" name="story" rows="8" style="width: 100%; resize: none; border: 0; font-family: inherit; font-size: inherit;"></textarea>
         </div>
         
         <input type="submit" value="Submit" style="background: #8df; border: 0; border-radius: 4px; padding: 0.5em 1em; font-family: inherit; font-size: inherit;">
-    </form>
+    </div>
 
     <div class="border headed" style="width: 500px;">
         <label>Output</label>
-        <div id="output">
-            
-        </div>
+        <div id="output"></div>
     </div>
 
-    <br>
+    <br><br><br><br><br>
     
 </body>
 </html>
