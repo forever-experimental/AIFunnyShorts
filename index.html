@@ -10,21 +10,30 @@
         .border { border: 1px solid lightgrey; padding: 1em; border-radius: 6px; margin: 1em 0; }
         .headed { position: relative; }
         .headed > label { position: absolute; top: -0.5em; left: 1em; background: white; }
+
+        textarea { width: 100%; resize: none; border: 0; font-family: inherit; font-size: inherit; }
+        
+        input[type="submit"] { background: #8df; border: 0; border-radius: 4px; padding: 0.5em 1em; font-family: inherit; font-size: inherit; }
+        input[type="submit"]:hover { background: #6bd; cursor: pointer; }
     </style>
 </head>
 <body>
 
 
-    <div class="border" style="width: 500px;">
-        <label for="apikey">API key:</label>
-        <input type="text" id="apikey" name="apikey" class="border">
+    <div class="border headed" style="width: 500px;">
+        <label>Input</label>
+
+        <div>
+            <label for="apikey">API key:</label>
+            <input type="text" id="apikey" class="border">
+        </div>
         
     	<div class="border headed">
     		<label for="story">Write me an exciting story about...</label>
-            <textarea id="story" name="story" rows="8" style="width: 100%; resize: none; border: 0; font-family: inherit; font-size: inherit;"></textarea>
+            <textarea id="story" rows="8"></textarea>
         </div>
         
-        <input type="submit" value="Submit" style="background: #8df; border: 0; border-radius: 4px; padding: 0.5em 1em; font-family: inherit; font-size: inherit;">
+        <input type="submit" value="Generate">
     </div>
 
     <div class="border headed" style="width: 500px;">
