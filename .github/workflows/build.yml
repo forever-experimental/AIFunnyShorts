@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: planetrenox/lockless-build-action@v0
+      - uses: planetrenox/addcommitpush-action@v0

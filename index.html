@@ -6,13 +6,13 @@
     <style>
                 body { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; align-items: center; gap: 2em; justify-content: center; height: 100vh; font-family: sans-serif; font-size: 14px; padding: 5em; box-sizing: border-box; }
         body > div { height: 100%; width: 100%; box-sizing: border-box; }
-        
+
         label { color: #778; }
 
         .flex-col { display: flex; flex-direction: column; gap: 1em; }
-        
+
         .border { border: 1px solid #bbb; padding: 1em; border-radius: 6px; }
-        
+
         .headed { position: relative; }
         .headed > label { position: absolute; top: -0.5em; left: 1em; background: white; }
 
@@ -35,11 +35,11 @@
         
     	<div class="border headed">
     		<label for="story">Write me an exciting story about...</label>
-            <textarea id="story" rows="8"></textarea>
+            <textarea id="story" rows="8">Write me an exciting story about [prompt]. Keep it very short. Do not have characters laugh or acknowledge the humor of the scene. Include emotional dialogue. Make the punchline make no sense. Use terminology such as, but not limited to, "chuds," "gooners," "rizz," "alpha," "nah I'd win," and "what the sigma."</textarea>
         </div>
 
         <div style="flex: 1;"></div>
-        
+
         <input type="submit" id="gen-script" value="Generate Script">
     </div>
 
@@ -52,13 +52,13 @@
         </div>
 
         <div style="flex: 1;"></div>
-        
+
         <input type="submit" id="gen-audio" value="Generate Audio">
     </div>
 
     <div class="border headed flex-col" style="grid-column: 2; grid-row: 1 / span 2;">
         <label>Video</label>
     </div>
-    
+    <script src="src/generate_story.bundle.js"></script>
 </body>
 </html>
