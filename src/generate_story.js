@@ -26,6 +26,9 @@ const $ = (selector) =>
     return el;
 };
 
+// SCRIPT GENERATION!     SCRIPT GENERATION!     SCRIPT GENERATION!
+// SCRIPT GENERATION!     SCRIPT GENERATION!     SCRIPT GENERATION!
+// SCRIPT GENERATION!     SCRIPT GENERATION!     SCRIPT GENERATION!
 $('#gen-script').onclick = async () => {
     CuteModal.show('Script generation in progress...');
     const response = await chat($('#apikey').value, $('#story').value, 0.7, 1.0)
@@ -33,6 +36,7 @@ $('#gen-script').onclick = async () => {
     $('#script').textContent = response;
     CuteModal.hide();
 }
+//----------------------------------------------------------------------------------------------------------------------
 
 async function chat(apiKey, messageContent, temperature, topP, model = 'gpt-4-turbo-2024-04-09') {
     const payload = {
@@ -47,7 +51,6 @@ async function chat(apiKey, messageContent, temperature, topP, model = 'gpt-4-tu
     });
     return (await response.json()).choices[0].message.content;
 }
-
 
 const CuteModal = {
     modal: (msg) => `
