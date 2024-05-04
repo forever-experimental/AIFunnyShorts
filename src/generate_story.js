@@ -1,9 +1,9 @@
 // SCRIPT GENERATION!
-$('#gen-script').onclick = async () => {
+$('#button-story').onclick = async () => {
     CuteModal.show('Script generation in progress...');
-    const response = await chat($('#apikey').value, $('#story').value, 0.7, 1.0)
+    const response = await chat($('#input-openai').value, $('#textarea-story').value, 0.7, 1.0)
     console.log(response);
-    $('#script').value = response;
+    $('#textarea-tts').value = response;
     CuteModal.hide();
 }
 // API CALL!

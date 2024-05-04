@@ -28,34 +28,34 @@
         <label>Text Generation</label>
 
         <div>
-            <label for="input-textgen-apikey">ChatGPT API key:</label>
-            <input type="text" id="input-textgen-apikey" class="border">
+            <label for="input-openai">ChatGPT API key:</label>
+            <input type="text" id="input-openai" class="border">
         </div>
         
     	<div class="border" style="flex: 1;">
-            <textarea id="input-textgen-text">
+            <textarea id="textarea-story">
 In 100 words, write me an exciting story about...
                 
 Do not have characters laugh or acknowledge the humor of the scene. Include emotional dialogue. Make the punchline make no sense. Use generation alpha slang such as, but not limited to, "chuds," "gooners," "rizz," "alpha," and "sigma."
             </textarea>
         </div>
 
-        <input type="submit" id="button-textgen-generate" value="Generate Script">
+        <input type="submit" id="button-story" value="Generate Script">
     </div>
 
     <div class="border headed flex-col">
         <label>Edit Script</label>
 
         <div>
-            <label for="input-audiogen-apikey">ElevenLabs API key:</label>
-            <input type="text" id="input-audiogen-apikey" class="border">
+            <label for="input-elvnlabs">ElevenLabs API key:</label>
+            <input type="text" id="input-elvnlabs" class="border">
         </div>
         
         <div class="border" style="flex: 1;">
-            <textarea id="input-audiogen-text"></textarea>
+            <textarea id="textarea-tts"></textarea>
         </div>
 
-        <input type="submit" id="button-audiogen-generate" value="Generate Audio">
+        <input type="submit" id="button-speech" value="Generate Audio">
     </div>
 
     <div class="border headed flex-col">
@@ -69,7 +69,7 @@ Do not have characters laugh or acknowledge the humor of the scene. Include emot
         
         <div style="flex: 1;"></div>
 
-        <input type="submit" id="button-videogen-generate" value="Generate Video">
+        <input type="submit" id="button-video" value="Generate Video">
     </div>
 
     <div class="border headed flex-col" style="grid-column: 2; grid-row: 1 / span 3;">
