@@ -22,7 +22,7 @@ $('#gen-audio').onclick = () => {
         .then(response => response.blob()) // Get the response as a blob
         .then(blob => {
             const url = URL.createObjectURL(blob);
-            const audio = document.getElementById('audio');
+            const audio = $('#audio');
             audio.src = url;
             audio.load(); // Load the audio source into the <audio> element
         })
