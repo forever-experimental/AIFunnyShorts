@@ -33,9 +33,12 @@
             <input type="text" id="apikey" class="border">
         </div>
         
-    	<div class="border headed" style="flex: 1;">
-    		<label for="story">Write me an exciting story about...</label>
-            <textarea id="story">Write me an exciting story about [prompt]. Keep it very short. Do not have characters laugh or acknowledge the humor of the scene. Include emotional dialogue. Make the punchline make no sense. Use terminology such as, but not limited to, "chuds," "gooners," "rizz," "alpha," "nah I'd win," and "what the sigma."</textarea>
+    	<div class="border" style="flex: 1;">
+            <textarea id="story">
+                In 100 words, write me an exciting story about...
+                
+                <br><br>Do not have characters laugh or acknowledge the humor of the scene. Include emotional dialogue. Make the punchline make no sense. Use generation alpha slang such as, but not limited to, "chuds," "gooners," "rizz," "alpha," and "sigma."
+            </textarea>
         </div>
 
         <input type="submit" id="gen-script" value="Generate Script">
@@ -44,8 +47,7 @@
     <div class="border headed flex-col">
         <label>Edit Script</label>
         
-        <div class="border headed" style="flex: 1;">
-    		<label for="script">Script</label>
+        <div class="border" style="flex: 1;">
             <textarea id="script"></textarea>
         </div>
 
@@ -54,6 +56,8 @@
 
     <div class="border headed flex-col">
         <label>Approve Audio</label>
+
+        <div style="flex: 1;"></div>
 
         <input type="submit" id="gen-audio" value="Generate Video">
     </div>
