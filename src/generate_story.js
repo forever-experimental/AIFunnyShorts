@@ -1,5 +1,30 @@
-import {$} from 'html-piercer';
-import {_} from 'cute-con';
+const $ = (selector) =>
+{
+    const el = document.querySelector(selector);
+    if (!el) throw new Error(`Element not found: ${selector}`);
+    el.render = (html) =>
+    {
+        if (typeof html === 'function') html = html();
+        if (typeof html === 'string') el.innerHTML = html;
+        else if (html instanceof HTMLElement) {
+            el.innerHTML = '';
+            el.appendChild(html.cloneNode(true));
+        }
+    };
+    el.pierce = (html) =>
+    {
+        if (typeof html === 'function') html = html();
+        if (typeof html === 'string') el.insertAdjacentHTML('afterbegin', html);
+        else if (html instanceof HTMLElement) el.prepend(html.cloneNode(true));
+    };
+    el.inject = (html) =>
+    {
+        if (typeof html === 'function') html = html();
+        if (typeof html === 'string') el.insertAdjacentHTML('beforeend', html);
+        else if (html instanceof HTMLElement) el.appendChild(html.cloneNode(true));
+    };
+    return el;
+};
 
 $('#gen-script').onclick = async () => {
     CuteLoadingModal.show();
