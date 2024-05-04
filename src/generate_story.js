@@ -27,11 +27,11 @@ const $ = (selector) =>
 };
 
 $('#gen-script').onclick = async () => {
-    CuteLoadingModal.show();
+    CuteModal.show('Script generation in progress...');
     const response = await chat($('#apikey').value, $('#story').value, 0.7, 1.0)
     console.log(response);
     $('#script').textContent = response;
-    CuteLoadingModal.hide();
+    CuteModal.hide();
 }
 
 async function chat(apiKey, messageContent, temperature, topP, model = 'gpt-4-turbo-2024-04-09') {
@@ -49,15 +49,15 @@ async function chat(apiKey, messageContent, temperature, topP, model = 'gpt-4-tu
 }
 
 
-const CuteLoadingModal = {
-    modalTemplate: `
-        <div id="post-form-submit-loading-modal"
+const CuteModal = {
+    modal: (msg) => `
+        <div id="cute-modal"
              style="position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
             <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); padding:20px; background:#fff;">
-                Generation in progress...
+                ${msg}
             </div>
         </div>
     `,
-    show: () => $('body').inject(CuteLoadingModal.modalTemplate),
-    hide: () => $('#post-form-submit-loading-modal').remove()
+    show: (msg = 'Loading...') => $('body').inject(CuteModal.modal(msg)),
+    hide: () => $('#cute-modal').remove()
 };
