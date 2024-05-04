@@ -28,7 +28,7 @@ const $ = (selector) =>
 
 $('#gen-script').onclick = async () => {
     CuteLoadingModal.show();
-    const response = await chat($('#apikey').value, $('#story').textContent, 0.7, 1.0)
+    const response = await chat($('#apikey').value, $('#story').value, 0.7, 1.0)
     console.log(response);
     $('#script').textContent = response;
     CuteLoadingModal.hide();
