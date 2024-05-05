@@ -1,5 +1,6 @@
 // SCRIPT GENERATION!
 $('#button-story').onclick = async () => {
+    console.log('Generating script...');
     CuteModal.show('Script generation in progress...');
     const response = await chat($('#input-openai').value, $('#textarea-story').value, 0.7, 1.0)
     console.log(response);
