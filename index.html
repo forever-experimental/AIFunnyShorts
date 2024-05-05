@@ -14,6 +14,7 @@
                 height: 100vh;
                 font-family: sans-serif;
                 font-size: 14px;
+                color: #778;
                 padding: 5em 0;
                 margin: auto;
                 width: 100%;
@@ -25,10 +26,6 @@
                 height: 100%;
                 width: 100%;
                 box-sizing: border-box;
-            }
-
-            label {
-                color: #778;
             }
 
             .flex-col {
@@ -113,8 +110,8 @@ Do not have characters laugh or acknowledge the humor of the scene. Include emot
             <div>
                 <label for="input-elvnlabs">ElevenLabs API key:</label>
                 <input type="text" id="input-elvnlabs" class="border" oninput="saveToLocalStorage(event)">
-                <div>Don't have an key? Make an account to get one <a href="https://elevenlabs.io">here</a>.</div>
             </div>
+            <i style="font-size: smaller;">Don't have an key? Make an account to get one <a href="https://elevenlabs.io">here</a>.</i>
             <div class="border" style="flex: 1;">
                 <textarea id="textarea-tts"></textarea>
             </div>
