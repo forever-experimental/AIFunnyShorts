@@ -78,6 +78,7 @@
                 cursor: pointer;
             }
         </style>
+        <script src="src/util.js"></script>
         <script>
             function saveToLocalStorage(event) {
                 localStorage.setItem(event.target.id, event.target.value);
@@ -112,6 +113,7 @@ Do not have characters laugh or acknowledge the humor of the scene. Include emot
             <div>
                 <label for="input-elvnlabs">ElevenLabs API key:</label>
                 <input type="text" id="input-elvnlabs" class="border" oninput="saveToLocalStorage(event)">
+                <div>Don't have an key? Make an account to get one <a href="https://elevenlabs.io">here</a>.</div>
             </div>
             <div class="border" style="flex: 1;">
                 <textarea id="textarea-tts"></textarea>
