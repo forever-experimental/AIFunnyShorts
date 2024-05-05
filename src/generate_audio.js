@@ -10,8 +10,8 @@ $('#button-speech').onclick = () => {
             text: $('#textarea-tts').value,
             model_id: 'eleven_multilingual_v1', // https://help.elevenlabs.io/hc/en-us/articles/21811236079505-How-do-I-find-the-model-ID
             voice_settings: {
-                stability: 0.3,
-                similarity_boost: 0.0,
+                stability: 0.4,
+                similarity_boost: 1.0,
                 style: 0.0,
                 use_speaker_boost: true
             }
