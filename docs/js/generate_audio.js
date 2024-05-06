@@ -1,5 +1,6 @@
 // https://elevenlabs.io/docs/api-reference/text-to-speech
 $('#button-speech').onclick = () => {
+    CuteModal.show('Audio generation in progress...');
     const options = {
         method: 'POST',
         headers: {
@@ -17,20 +18,17 @@ $('#button-speech').onclick = () => {
             }
         })
     };
-    CuteModal.show('Audio generation in progress...');
     try {
         $('#audio').src = '';
         fetch('https://api.elevenlabs.io/v1/text-to-speech/jsCqWAovK2LkecY7zXl4', options) // https://api.elevenlabs.io/v1/voices
-            .then(response => response.blob())
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.blob();
+            })
             .then(blob => {
-                const url = URL.createObjectURL(blob);
-                $('#audio').src = url;
+                $('#audio').src = URL.createObjectURL(blob);
                 $('#audio').load();
             })
-            .catch(err => console.error(err));
-    } catch (err) {
-        console.error(err);
-    }
-    console.log('done...');
-    CuteModal.hide();
+            .catch(err => {console.error(err);}).finally(() => CuteModal.hide());
+    } catch (err) {console.error(err);}
 }

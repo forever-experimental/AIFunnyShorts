@@ -1,11 +1,14 @@
 {
   "type": "module",
   "scripts": {
-    "build": "npx esbuild src/generate_story.js --bundle --outfile=src/generate_story.bundle.js --format=esm"
+    "server": "node main.js",
+    "build": "npx esbuild docs/js/generate_story.js --bundle --outfile=src/generate_story.bundle.js --format=esm"
   },
   "dependencies": {
     "amnesic-openai": "1.0.*",
     "cute-con": "1.1.*",
-    "html-piercer": "0.1.*"
+    "express": "^4.19.2",
+    "html-piercer": "0.1.*",
+    "multer": "^1.4.5-lts.1"
   }
 }

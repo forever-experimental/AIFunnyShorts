@@ -75,7 +75,8 @@
                 cursor: pointer;
             }
         </style>
-        <script src="src/util.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/html-piercer@0.3"></script>
+        <script src="//cdn.jsdelivr.net/npm/cute-modal@0.2.2"></script>
         <script>
             function saveToLocalStorage(event) {
                 localStorage.setItem(event.target.id, event.target.value);
@@ -119,18 +120,15 @@ Do not have characters laugh or acknowledge the humor of the scene. Include emot
         </div>
         <div class="border headed flex-col">
             <label>Approve Audio</label>
-            <audio id="audio" controls>
-                <!-- <source src="horse.ogg" type="audio/ogg">
-                <source src="horse.mp3" type="audio/mpeg"> -->
-                Your browser does not support the audio element.
-            </audio>
+            <audio id="audio" controls></audio>
             <div style="flex: 1;"></div>
             <input type="submit" id="button-video" value="Generate Video">
         </div>
         <div class="border headed flex-col" style="grid-column: 2; grid-row: 1 / span 3;">
             <label>Final Video</label>
         </div>
-        <script src="src/generate_story.js"></script>
-        <script src="src/generate_audio.js"></script>
+        <script src="js/generate_story.js"></script>
+        <script src="js/generate_audio.js"></script>
+        <script src="js/generate_video.js"></script>
     </body>
 </html>
