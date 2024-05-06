@@ -1,7 +1,6 @@
 import express from 'express';
 import multer from 'multer';
-import path from 'path';
-import fs from 'fs';
+import {main} from './main.js';
 
 const router = express.Router();
 
@@ -20,16 +19,9 @@ const upload = multer({ storage: storage });
 
 // Route to handle file upload and video editing
 router.post('/', upload.single('file'), (req, res) => {
-    const editedVideoPath = editVideo(req.file.path);
+    main(req.file.path);
     res.json({ filePath: `/video.mp4` });
 });
-
-
-function editVideo(audioPath) {
-    console.log(`Editing video using audio from: ${audioPath}`);
-    // For now, just pass the path of a static video file
-    return path.resolve('/video.mp4');
-}
 
 
 export default router;
