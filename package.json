@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "server": "node main.js",
+    "server": "node server/main.js",
     "build": "npx esbuild docs/js/generate_story.js --bundle --outfile=src/generate_story.bundle.js --format=esm"
   },
   "dependencies": {
